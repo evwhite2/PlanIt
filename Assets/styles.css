@@ -1,18 +1,45 @@
+
+body{
+    background-image: url("graphics/anchor-lee-kO1G3neRA2o-unsplash.jpg");
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    font-family: "Roboto Slab", serif;
+}
+
+.ellen-table-header{
+    font-size:25px;
+}
+.foot{
+    font-size:14px;
+    padding-top: 30px;
+    text-align: center;
+}
+
 .userEventText{
+    background-color:rgba(243, 242, 242, 0.87);
+    font-family: "PT sans", sans-serif;
+    font-size:18px;
     width:80%;
 }
 
 .saveBtn-js{
-    background-color: #2b2929;
     border:none;
     border-radius: 5px;
     height:35px;
 }
-.saveImg{
-    height:25px; 
-    width:25px;
-}
 
 .inPast{
-    background-color: rgb(97, 94, 94);
+    opacity: 0.3;
+    background-color:rgba(243, 242, 242, 0.87);
+    color:black;
+}
+
+#ellen-header{
+    background-color: transparent;
+}
+
+#QOD{
+    font-family: "PT sans", sans-serif;
+    font-size:18px;
 }

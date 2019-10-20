@@ -11,17 +11,18 @@
     
     <link rel="icon" href="Assets/graphics/planet-with-a-ring.png" type="image/x-icon/">
     
-    
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto+Slab&display=swap" rel="stylesheet">
 
     <title>PlanIt</title>
 
 </head>
 <body>
 
-  <div class="jumbotron">
+  <div id="ellen-header" class="jumbotron">
     <h1 class="display-4" id="date">Date & Time</h1>
+    <h4 id="currentTime"></h4>
     <hr class="my-4">
-    <p>Daily Quote</p>
+    <p id="QOD">Daily Quote</p>
   </div>
 
     <div class="container">
@@ -33,19 +34,37 @@
                 <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">Time</th>
-                        <th scope="col">Event</th>
+                        <th class="ellen-table-header" scope="col">Time</th>
+                        <th class="ellen-table-header" scope="col">Event</th>
                         <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
+                     <tr class="displayRow" data-time="7">
+                          <td class="timeCol" data-time="7">7:00 am</td>
+                          <td class="userEventTab">
+                            <textarea id="hour-7" class="userEventText"></textarea>
+                          </td>
+                          <td>
+                            <img class="saveBtn-js" data-key="hour-7" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png">
+                          </td>
+                      </tr> 
+                      <tr class="displayRow" data-time="8">
+                          <td class="timeCol" data-time="8">8:00 am</td>
+                          <td class="userEventTab">
+                            <textarea id="hour-8" class="userEventText"></textarea>
+                          </td>
+                          <td>
+                            <img class="saveBtn-js" data-key="hour-8" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png">
+                          </td>
+                      </tr>
                       <tr class="displayRow" data-time="9">
                           <td class="timeCol" data-time="9">9:00 am</td>
                           <td class="userEventTab">
                             <textarea id="hour-9" class="userEventText"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-9"><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-9" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png">
                           </td>
                       </tr>
                       <tr class="displayRow" data-time="10">
@@ -54,7 +73,7 @@
                             <textarea id="hour-10" class="userEventText" id="hour-10"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-10" ><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-10" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png">
                           </td>
                       </tr>
                       <tr class="displayRow" data-time="11">
@@ -63,7 +82,7 @@
                             <textarea id="hour-11" class="userEventText"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-11"><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-11" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png">
                           </td>
                       </tr>
                       <tr class="displayRow" data-time="12">
@@ -72,7 +91,7 @@
                             <textarea id="hour-12" class="userEventText"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-12"><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-12" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" >
                           </td>
                       </tr>
                       <tr class="displayRow" data-time="13">
@@ -81,7 +100,7 @@
                             <textarea id="hour-13" class="userEventText"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-13"><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-13" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" >
                           </td>
                       </tr>
                       <tr class="displayRow" data-time="14">
@@ -90,7 +109,7 @@
                             <textarea id="hour-14" class="userEventText"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-14"><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-14" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png">
                           </td>
                       </tr>
                       <tr class="displayRow" data-time="15">
@@ -99,7 +118,7 @@
                             <textarea id="hour-15" class="userEventText"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-15"><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-15" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png">
                           </td>
                       </tr>
                       <tr class="displayRow" data-time="16">
@@ -108,7 +127,7 @@
                             <textarea id="hour-16" class="userEventText"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-16"><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-16" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" >
                           </td>
                       </tr>
                       <tr class="displayRow" data-time="17">
@@ -117,7 +136,43 @@
                             <textarea id="hour-17" class="userEventText"></textarea>
                           </td>
                           <td>
-                            <button class="saveBtn-js" data-key="hour-17"><img class="saveImg" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" ></button>
+                            <img class="saveBtn-js" data-key="hour-17" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" >
+                          </td>
+                      </tr>
+                      <tr class="displayRow" data-time="18">
+                          <td class="timeCol" data-time="18">6:00 pm</td>
+                          <td class="userEventTab">
+                            <textarea id="hour-18" class="userEventText"></textarea>
+                          </td>
+                          <td>
+                            <img class="saveBtn-js" data-key="hour-18" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" >
+                          </td>
+                      </tr>
+                      <tr class="displayRow" data-time="19">
+                          <td class="timeCol" data-time="19">7:00 pm</td>
+                          <td class="userEventTab">
+                            <textarea id="hour-19" class="userEventText"></textarea>
+                          </td>
+                          <td>
+                            <img class="saveBtn-js" data-key="hour-19" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" >
+                          </td>
+                      </tr>
+                      <tr class="displayRow" data-time="20">
+                          <td class="timeCol" data-time="20">8:00 pm</td>
+                          <td class="userEventTab">
+                            <textarea id="hour-20" class="userEventText"></textarea>
+                          </td>
+                          <td>
+                            <img class="saveBtn-js" data-key="hour-20" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" >
+                          </td>
+                      </tr>
+                      <tr class="displayRow" data-time="21">
+                          <td class="timeCol" data-time="21">9:00 pm</td>
+                          <td class="userEventTab">
+                            <textarea id="hour-21" class="userEventText"></textarea>
+                          </td>
+                          <td>
+                            <img class="saveBtn-js" data-key="hour-21" src="Assets/graphics/Save-Button-PNG-Transparent-Photo.png" >
                           </td>
                       </tr>
 
@@ -137,4 +192,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="Assets/app.js"></script>
 </body>
+<footer>
+<p class="foot">Learn more about this page be clicking <a href="README.md">here </a></p>  
+</footer>
 </html>
