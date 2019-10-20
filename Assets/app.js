@@ -1,15 +1,12 @@
 var currentTime= moment();
 console.log(currentTime);
 var date= moment().format("dddd, MMMM Do YYYY");
-var timeObj=[{
-    hour: [""]
-}];
- var hoursArray=["6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21"];
-
-
+var cHour= moment().hour();
+console.log(cHour);
 
 $(document).ready(function(){
 
+    
     //writing today's date at top of page
     var date= moment().format("dddd, MMMM Do YYYY");
     function writeDate(){
@@ -17,81 +14,65 @@ $(document).ready(function(){
     }
     writeDate();
 
-    var hour = moment().format("h:mm a");
-    console.log(hour);
+    var currentTime = moment().format("h:mm a");
 
-    //generating today's calendar
-   
-    //loop to diplay all hours between 6am & 9pm
-    function renderSchedule(){
-       
-        for (var i=0; i<hoursArray.length; i++){
-                
-            var hourData= hoursArray[i];
-            
-            //preparing new entry
-            var displayRow= $("<tr>");
-            displayRow.addClass("displayRow");
-            $("tbody").append(displayRow);
+    // checking time is correct
+    console.log("The current time per moment() is: "+currentTime);
 
-            //creating new row
-            var newRow= $("<th>");
-            newRow.attr("scope","col");
-            displayRow.append(newRow);
+
+    //reading local storage for saved items.
+    var scheduleToday = JSON.parse(localStorage.getItem('tasks')) || {};
+
+    $(".saveBtn-js").on("click", function() {
+        console.log("saved");
+
+        /* get the key and the value */
+        var key = $(this).data('key');
+        console.log(key);
+        var value = $(`#${key}`).val();
         
-            //filling row with column data
 
-            //time of day
-            var timeSlot= $("<td>");
-            timeSlot.addClass("timeTab");
-            timeSlot.text(hourData);
-            displayRow.append(timeSlot);
+        // save to local storage
+        scheduleToday[key] = value;
+        localStorage.setItem(key, value);
+        alert("event saved");
+        localStorage.setItem('tasks', JSON.stringify(scheduleToday));
+    });
 
-            //user input date
-            var eventEntry= $("<td>");
-            eventEntry.addClass("eventTab");
-            var userEntry= $("<textarea>");
-            userEntry.addClass("userEntryBox");
-            eventEntry.append(userEntry);
-            displayRow.append(eventEntry);
+    
+    // pull from local storage 
+    $('#hour-9').val(scheduleToday['hour-9']);
+    $('#hour-10').val(scheduleToday['hour-10']);
+    $('#hour-11').val(scheduleToday['hour-11']);
+    $('#hour-12').val(scheduleToday['hour-12']);
+    $('#hour-13').val(scheduleToday['hour-13']);
+    $('#hour-14').val(scheduleToday['hour-14']);
+    $('#hour-15').val(scheduleToday['hour-15']);
+    $('#hour-16').val(scheduleToday['hour-16']);
+    $('#hour-17').val(scheduleToday['hour-17']);
 
-            //user input note
-            var noteEntry= $("<td>");
-            noteEntry.addClass("noteTab");
-            var userNote= $("<textarea>");
-            userNote.addClass("userNoteBox");
-            noteEntry.append(userNote);
-            displayRow.append(noteEntry);
+});
 
-            //save button
-            var saveBtnCol= $("<td>");
-            var saveBtn= $("<button>");
-            saveBtn.addClass("btn btn-dark");
-            saveBtn.attr("type", "button");
-            var saveImg= $("img");
-                //styling save btn image
-                saveImg.attr("src", "Assets/graphics/Save-Button-PNG-Transparent-Photo.png"); //!!! MY IMAGE DOESN'T WORK! 
-                saveImg.attr("height", "15px");
-                saveImg.attr("width", "15px");
-            //putting save btn elements together and appending to row
-            saveBtn.append(saveImg);
-            saveBtnCol.append(saveBtn);
-            displayRow.append(saveBtnCol);
+    
+function colorCode(){
+    var timeArray= $(".timeCol");
 
-        }
-        
+    for (var i=0; i<9; i++){
+        var timeElement= timeArray[i];
+        var timeData= $(timeElement).data("time");
+;
+        console.log(timeData);
+       if(timeData<cHour){
+           console.log(timeData+" is past");
+           var parentele=$(timeElement).parent()
+           console.log(parentele);
+           $(parentele).addClass("inPast");
+       }
     };
-
-    renderSchedule();
     
-    //render saved information
-    
-        
-    //click event field to add new input
-    //click note field to add new notes
-    //click save button to save to local storage
-    //update color of field once time of day has passed
+};   
+colorCode();
 
-    
-})
 
+
+//stripe the key from the date-key (hour-9) in order to use moment().hour() to use greater than or less than

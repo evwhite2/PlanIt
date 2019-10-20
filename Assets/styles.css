@@ -1,3 +1,18 @@
-.userEntryBox.pointer{
-    cursor:pointer;
+.userEventText{
+    width:80%;
+}
+
+.saveBtn-js{
+    background-color: #2b2929;
+    border:none;
+    border-radius: 5px;
+    height:35px;
+}
+.saveImg{
+    height:25px; 
+    width:25px;
+}
+
+.inPast{
+    background-color: rgb(97, 94, 94);
 }
