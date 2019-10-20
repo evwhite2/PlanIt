@@ -17,7 +17,7 @@ $(document).ready(function(){
     }
 
     writeDate();
-    // renderDailyQuote();
+    renderDailyQuote();
 
     //reading local storage for saved items.
     var scheduleToday = JSON.parse(localStorage.getItem('tasks')) || {};
