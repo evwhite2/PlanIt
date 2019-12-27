@@ -6,7 +6,6 @@ var cHour= moment().hour();
 $(document).ready(function(){
 
     
-    
     //writing today's date at top of page
     var date= moment().format("dddd, MMMM Do YYYY");
     var currentTime = moment().format("h:mm a");
@@ -35,6 +34,9 @@ $(document).ready(function(){
 
     
     // pull from local storage 
+
+    $('#hour-7').val(scheduleToday['hour-7']);
+    $('#hour-8').val(scheduleToday['hour-8']);
     $('#hour-9').val(scheduleToday['hour-9']);
     $('#hour-10').val(scheduleToday['hour-10']);
     $('#hour-11').val(scheduleToday['hour-11']);
@@ -44,7 +46,10 @@ $(document).ready(function(){
     $('#hour-15').val(scheduleToday['hour-15']);
     $('#hour-16').val(scheduleToday['hour-16']);
     $('#hour-17').val(scheduleToday['hour-17']);
-
+    $('#hour-18').val(scheduleToday['hour-18']);
+    $('#hour-19').val(scheduleToday['hour-19']);
+    $('#hour-20').val(scheduleToday['hour-20']);
+    $('#hour-21').val(scheduleToday['hour-21']);
 });
 
     
@@ -63,8 +68,8 @@ function colorCode(){
 
 colorCode();
 
+//THIS FEATURE IS CURRENTLY DISABLED:
 // render Daily Quotes 
-
 function renderDailyQuote(){
 //     var quoteKey= "319158dd4fmshdc437b2d385456ap1803d4jsn519dcbba1486";
 //     var myQuery= "https://theysaidso.p.rapidapi.com/authors.json"+
